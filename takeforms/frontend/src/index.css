@@ -1,0 +1,454 @@
+/* frontend/src/index.css */
+
+/* --------------------------------------------------- */
+/* CSS Reset e Base */
+/* --------------------------------------------------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box; /* Garante que padding e border não aumentem o tamanho final */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif; /* Uma fonte moderna e legível */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Garante que ocupe a altura total da viewport */
+    background-color: #f0f2f5; /* Fundo cinza claro */
+    color: #333; /* Cor de texto padrão */
+    line-height: 1.6; /* Espaçamento de linha para melhor leitura */
+}
+
+#root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Ocupa a largura total */
+    padding: 20px; /* Adiciona um padding geral para telas maiores */
+}
+
+/* --------------------------------------------------- */
+/* Container Principal */
+/* --------------------------------------------------- */
+.container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Sombra mais suave e moderna */
+    text-align: center;
+    width: 100%;
+    max-width: 800px; /* Largura máxima para centralizar o conteúdo */
+    margin: 20px auto; /* Centraliza na página e dá espaçamento */
+}
+
+h1 {
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-size: 2.5em; /* Título maior */
+    font-weight: 700;
+    letter-spacing: -0.02em; /* Pequeno ajuste para legibilidade */
+}
+
+/* --------------------------------------------------- */
+/* Navegação de Categorias (Consumidores/Empresas) */
+/* --------------------------------------------------- */
+.category-navigation {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 35px;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 10px;
+}
+
+.category-button {
+    background: none;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.3em;
+    font-weight: 600;
+    cursor: pointer;
+    color: #6c757d;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    border-bottom: 4px solid transparent;
+    margin: 0 10px;
+    flex-grow: 1; /* Permite que os botões cresçam para ocupar espaço */
+    max-width: 200px; /* Limita o tamanho em telas muito largas */
+}
+
+.category-button.active {
+    color: #007bff;
+    border-bottom-color: #007bff;
+    font-weight: 700;
+}
+
+.category-button:hover:not(.active) {
+    color: #0056b3;
+}
+
+/* --------------------------------------------------- */
+/* Navegação por Abas (CPF/Nome/Telefone, CNPJ/Razão Social/Telefone) */
+/* --------------------------------------------------- */
+.tab-navigation {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #dee2e6;
+    flex-wrap: wrap; /* Permite que as abas quebrem a linha em telas pequenas */
+}
+
+.tab-button {
+    background: none;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1.05em;
+    font-weight: 500;
+    cursor: pointer;
+    color: #495057;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    border-bottom: 2px solid transparent;
+    margin: 0 5px;
+}
+
+.tab-button.active {
+    color: #007bff;
+    border-bottom-color: #007bff;
+    font-weight: 600;
+}
+
+.tab-button:hover:not(.active) {
+    color: #0056b3;
+}
+
+/* --------------------------------------------------- */
+/* Formulários de Busca */
+/* --------------------------------------------------- */
+.search-form {
+    display: flex;
+    gap: 15px; /* Espaçamento entre os elementos do formulário */
+    margin-bottom: 30px;
+    flex-wrap: wrap; /* Quebra linha em telas menores */
+    justify-content: center;
+    align-items: center; /* Alinha verticalmente os itens */
+}
+
+.search-form input[type="text"] {
+    flex-grow: 1; /* Permite que o input preencha o espaço disponível */
+    padding: 14px 18px;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    font-size: 1.1em;
+    outline: none;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    min-width: 250px; /* Largura mínima para o input */
+}
+
+.search-form input[type="text"]:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.search-form button {
+    padding: 14px 28px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2); /* Sombra para o botão */
+}
+
+.search-form button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px); /* Pequeno efeito de elevação */
+}
+
+.search-form button:disabled {
+    background-color: #a0c9f1;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+/* --------------------------------------------------- */
+/* Mensagens de Status (Carregando, Erro) */
+/* --------------------------------------------------- */
+.message-box {
+    padding: 18px;
+    border-radius: 8px;
+    margin-top: 25px;
+    font-size: 1em;
+    font-weight: 500;
+    text-align: center;
+    border: 1px solid transparent; /* Base para cores */
+}
+
+.loading-message {
+    background-color: #e9f7fe;
+    color: #007bff;
+    border-color: #b3e0ff;
+}
+
+.error-message {
+    background-color: #ffebe0;
+    color: #dc3545;
+    border-color: #ff9999;
+}
+
+/* --------------------------------------------------- */
+/* Exibição de Resultados (Ficha Estruturada) */
+/* --------------------------------------------------- */
+.results-box {
+    background-color: #f8f9fa; /* Fundo suave para a caixa de resultados */
+    border: 1px solid #e9ecef;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: left;
+    margin-top: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Sombra leve para destacar */
+}
+
+.results-box h3 {
+    color: #0056b3;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 12px;
+    font-size: 1.8em;
+    font-weight: 600;
+}
+
+.ficha-item {
+    background-color: #ffffff;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px; /* Espaçamento entre múltiplas fichas */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.ficha-item:last-child {
+    margin-bottom: 0; /* Remove margem do último item */
+}
+
+.ficha-item h4 {
+    color: #007bff;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 1px dashed #e0e0e0;
+    padding-bottom: 10px;
+    font-size: 1.4em;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espaçamento entre ícone e texto */
+}
+
+.ficha-icon {
+    font-size: 1.2em;
+    color: #007bff; /* Cor do ícone */
+}
+
+
+.field-row {
+    display: flex; /* Para alinhar label e valor */
+    align-items: baseline; /* Alinha a base do texto */
+    margin-bottom: 10px; /* Espaçamento entre as linhas de campo */
+    font-size: 1em;
+}
+
+.field-row strong {
+    color: #495057; /* Cor para o label do campo */
+    min-width: 150px; /* Garante alinhamento dos labels */
+    flex-shrink: 0; /* Não permite que o label encolha */
+    margin-right: 15px;
+    font-weight: 600;
+}
+
+.field-row span, .field-row ul {
+    color: #343a40; /* Cor para o valor do campo */
+    flex-grow: 1; /* Permite que o valor ocupe o espaço restante */
+    word-break: break-word; /* Garante que texto longo quebre a linha */
+}
+
+.value-na {
+    color: #888;
+    font-style: italic;
+}
+
+/* Seção para grupos de campos como Sócios, CNAEs secundários */
+.field-section {
+    background-color: #f0f8ff; /* Fundo suave para a seção */
+    border: 1px solid #e0efff;
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.field-section h5 {
+    color: #0056b3;
+    margin-top: 0;
+    margin-bottom: 10px;
+    border-bottom: 1px dashed #cce0ff;
+    padding-bottom: 5px;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+/* Estilos para lista de telefones */
+.phone-list, .email-list, .address-list, .cnae-list, .socios-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.phone-list li, .email-list li, .address-list li, .cnae-list li, .socios-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    background-color: #ffffff; /* Fundo para cada item da lista */
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #eee;
+    font-size: 0.95em;
+}
+.phone-list li:last-child, .email-list li:last-child, .address-list li:last-child, .cnae-list li:last-child, .socios-list li:last-child {
+    margin-bottom: 0;
+}
+
+
+.whatsapp-icon {
+    color: #25D366; /* Cor verde do WhatsApp */
+    font-size: 1.1em;
+    margin-left: 8px; /* Espaçamento do número */
+    vertical-align: middle;
+}
+
+.phone-icon {
+    color: #007bff; /* Cor do ícone do telefone */
+    font-size: 1em;
+    margin-right: 5px;
+}
+
+.phone-type {
+    color: #6c757d;
+    font-size: 0.9em;
+    margin-left: 5px;
+}
+
+
+/* --------------------------------------------------- */
+/* Mensagens de Não Resultados */
+/* --------------------------------------------------- */
+.no-results-message {
+    text-align: center;
+    color: #6c757d;
+    font-style: italic;
+    margin-top: 25px;
+    padding: 20px;
+    border: 1px dashed #dcdcdc;
+    border-radius: 8px;
+    background-color: #fcfcfc;
+}
+
+.no-results-message p {
+    margin-top: 10px;
+    font-size: 0.95em;
+    color: #888;
+}
+
+
+/* --------------------------------------------------- */
+/* Media Queries para Responsividade */
+/* --------------------------------------------------- */
+@media (max-width: 768px) {
+    .container {
+        padding: 25px;
+        margin: 15px;
+    }
+
+    h1 {
+        font-size: 2em;
+        margin-bottom: 25px;
+    }
+
+    .category-button {
+        font-size: 1.1em;
+        padding: 12px 20px;
+        margin: 0 5px;
+    }
+
+    .tab-button {
+        font-size: 0.95em;
+        padding: 10px 15px;
+        margin: 0 3px;
+    }
+
+    .search-form {
+        flex-direction: column; /* Empilha itens em telas menores */
+        gap: 10px;
+    }
+
+    .search-form input[type="text"],
+    .search-form button {
+        width: 100%; /* Ocupa a largura total */
+        min-width: unset; /* Remove largura mínima */
+    }
+
+    .message-box,
+    .results-box {
+        padding: 15px;
+    }
+
+    .results-box h3 {
+        font-size: 1.5em;
+    }
+
+    .ficha-item {
+        padding: 15px;
+    }
+
+    .ficha-item h4 {
+        font-size: 1.2em;
+    }
+
+    .field-row {
+        flex-direction: column; /* Empilha label e valor em telas menores */
+        align-items: flex-start;
+        margin-bottom: 12px;
+    }
+
+    .field-row strong {
+        min-width: unset;
+        margin-right: 0;
+        margin-bottom: 3px; /* Espaçamento entre label e valor empilhados */
+    }
+
+    .phone-list li, .email-list li, .address-list li, .cnae-list li, .socios-list li {
+        flex-wrap: wrap; /* Permite que o conteúdo da lista quebre */
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .category-navigation,
+    .tab-navigation {
+        flex-direction: column;
+    }
+
+    .category-button,
+    .tab-button {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
