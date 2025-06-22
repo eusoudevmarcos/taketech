@@ -1,3 +1,5 @@
+/* app.css */
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -5,19 +7,24 @@
   text-align: center;
 }
 
+/* Logo styles */
 .logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
-  transition: filter 300ms;
+  transition: filter 300ms ease-in-out;
+  cursor: pointer; /* Dá dica que é interativo */
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
+/* Logo spin animation */
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
@@ -27,16 +34,53 @@
   }
 }
 
+/* Aplica animação somente se a preferência de redução de movimento for desativada */
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+    animation: logo-spin 20s linear infinite;
   }
 }
 
+/* Card container */
 .card {
   padding: 2em;
+  background-color: #fff; /* Sugestão de fundo para destaque */
+  border-radius: 12px; /* Bordas arredondadas */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  margin: 1.5rem auto;
+  max-width: 600px;
+  text-align: left;
 }
 
+/* Texto de documentação */
 .read-the-docs {
   color: #888;
+  font-size: 0.95em;
+  margin-top: 1rem;
+  font-style: italic;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  #root {
+    padding: 1rem;
+  }
+
+  .logo {
+    height: 4.5em;
+    padding: 1em;
+  }
+
+  .card {
+    padding: 1.5em;
+    margin: 1rem;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    height: 3.5em;
+    padding: 0.75em;
+  }
 }

@@ -1,8 +1,3 @@
-/* frontend/src/index.css */
-
-/* --------------------------------------------------- */
-/* CSS Reset e Base */
-/* --------------------------------------------------- */
 *,
 *::before,
 *::after {
@@ -18,7 +13,7 @@ body {
     align-items: center;
     min-height: 100vh; /* Garante que ocupe a altura total da viewport */
     background-color: #f0f2f5; /* Fundo cinza claro */
-    color: #333; /* Cor de texto padrão */
+    color: #48038a; /* Cor de texto padrão */
     line-height: 1.6; /* Espaçamento de linha para melhor leitura */
 }
 
@@ -45,7 +40,7 @@ body {
 }
 
 h1 {
-    color: #2c3e50;
+    color: #48038a;
     margin-bottom: 30px;
     font-size: 2.5em; /* Título maior */
     font-weight: 700;
@@ -70,7 +65,7 @@ h1 {
     font-size: 1.3em;
     font-weight: 600;
     cursor: pointer;
-    color: #6c757d;
+    color: #48038a;
     transition: color 0.3s ease, border-bottom 0.3s ease;
     border-bottom: 4px solid transparent;
     margin: 0 10px;
@@ -79,13 +74,13 @@ h1 {
 }
 
 .category-button.active {
-    color: #007bff;
-    border-bottom-color: #007bff;
+    color: #48038a;
+    border-bottom-color: #48038a;
     font-weight: 700;
 }
 
 .category-button:hover:not(.active) {
-    color: #0056b3;
+    color: #8c1df5;
 }
 
 /* --------------------------------------------------- */
@@ -114,13 +109,13 @@ h1 {
 }
 
 .tab-button.active {
-    color: #007bff;
-    border-bottom-color: #007bff;
+    color: #48038a;
+    border-bottom-color: #48038a;
     font-weight: 600;
 }
 
 .tab-button:hover:not(.active) {
-    color: #0056b3;
+    color: #8f24f3;
 }
 
 /* --------------------------------------------------- */
@@ -147,13 +142,13 @@ h1 {
 }
 
 .search-form input[type="text"]:focus {
-    border-color: #007bff;
+    border-color: #48038a;
     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
 .search-form button {
     padding: 14px 28px;
-    background-color: #007bff;
+    background-color: #48038a;
     color: white;
     border: none;
     border-radius: 8px;
@@ -165,7 +160,7 @@ h1 {
 }
 
 .search-form button:hover {
-    background-color: #0056b3;
+    background-color: #8f24f3;
     transform: translateY(-2px); /* Pequeno efeito de elevação */
 }
 
@@ -191,7 +186,7 @@ h1 {
 
 .loading-message {
     background-color: #e9f7fe;
-    color: #007bff;
+    color: #48038a;
     border-color: #b3e0ff;
 }
 
@@ -215,7 +210,7 @@ h1 {
 }
 
 .results-box h3 {
-    color: #0056b3;
+    color: #8f24f3;
     margin-bottom: 20px;
     border-bottom: 2px solid #e0e0e0;
     padding-bottom: 12px;
@@ -237,7 +232,7 @@ h1 {
 }
 
 .ficha-item h4 {
-    color: #007bff;
+    color: #48038a;
     margin-top: 0;
     margin-bottom: 15px;
     border-bottom: 1px dashed #e0e0e0;
@@ -251,7 +246,7 @@ h1 {
 
 .ficha-icon {
     font-size: 1.2em;
-    color: #007bff; /* Cor do ícone */
+    color: #48038a; /* Cor do ícone */
 }
 
 
@@ -292,7 +287,7 @@ h1 {
 }
 
 .field-section h5 {
-    color: #0056b3;
+    color: #8f24f3;
     margin-top: 0;
     margin-bottom: 10px;
     border-bottom: 1px dashed #cce0ff;
@@ -301,154 +296,183 @@ h1 {
     font-weight: 600;
 }
 
-/* Estilos para lista de telefones */
-.phone-list, .email-list, .address-list, .cnae-list, .socios-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+/* --------------------------------------------------- */
+/* Listagens Simples em Tabela */
+/* --------------------------------------------------- */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 30px;
 }
 
-.phone-list li, .email-list li, .address-list li, .cnae-list li, .socios-list li {
-    display: flex;
-    align-items: center;
-    margin-bottom: 5px;
-    background-color: #ffffff; /* Fundo para cada item da lista */
-    padding: 5px 10px;
-    border-radius: 5px;
-    border: 1px solid #eee;
-    font-size: 0.95em;
-}
-.phone-list li:last-child, .email-list li:last-child, .address-list li:last-child, .cnae-list li:last-child, .socios-list li:last-child {
-    margin-bottom: 0;
+.table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 600px;
 }
 
-
-.whatsapp-icon {
-    color: #25D366; /* Cor verde do WhatsApp */
-    font-size: 1.1em;
-    margin-left: 8px; /* Espaçamento do número */
-    vertical-align: middle;
-}
-
-.phone-icon {
-    color: #007bff; /* Cor do ícone do telefone */
+.table th,
+.table td {
+    border: 1px solid #dee2e6;
+    padding: 12px 18px;
+    text-align: left;
     font-size: 1em;
-    margin-right: 5px;
+    color: #495057;
 }
 
-.phone-type {
-    color: #6c757d;
-    font-size: 0.9em;
-    margin-left: 5px;
+.table th {
+    background-color: #48038a;
+    color: white;
+    font-weight: 600;
 }
 
+.table tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.table tbody tr:hover {
+    background-color: #e2e6ea;
+    cursor: pointer;
+}
 
 /* --------------------------------------------------- */
-/* Mensagens de Não Resultados */
+/* Botões Gerais */
 /* --------------------------------------------------- */
-.no-results-message {
-    text-align: center;
-    color: #6c757d;
-    font-style: italic;
-    margin-top: 25px;
-    padding: 20px;
-    border: 1px dashed #dcdcdc;
+.button-primary {
+    background-color: #48038a;
+    color: white;
+    padding: 12px 28px;
+    border: none;
     border-radius: 8px;
-    background-color: #fcfcfc;
+    font-size: 1.1em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.15s ease;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
 }
 
-.no-results-message p {
-    margin-top: 10px;
-    font-size: 0.95em;
-    color: #888;
+.button-primary:hover {
+    background-color: #8f24f3;
+    transform: translateY(-2px);
 }
 
+.button-secondary {
+    background-color: #6c757d;
+    color: white;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-secondary:hover {
+    background-color: #5a6268;
+}
 
 /* --------------------------------------------------- */
-/* Media Queries para Responsividade */
+/* Modal Básico */
+/* --------------------------------------------------- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.modal-content {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    max-width: 600px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    position: relative;
+}
+
+.modal-close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #888;
+    transition: color 0.2s ease;
+}
+
+.modal-close-button:hover {
+    color: #333;
+}
+
+/* --------------------------------------------------- */
+/* Responsividade */
 /* --------------------------------------------------- */
 @media (max-width: 768px) {
     .container {
         padding: 25px;
-        margin: 15px;
+        max-width: 90vw;
     }
 
+    .category-navigation {
+        flex-direction: column;
+        border-bottom: none;
+    }
+
+    .category-button {
+        max-width: 100%;
+        margin: 6px 0;
+        border-bottom: none;
+        padding: 12px 0;
+    }
+
+    .tab-navigation {
+        justify-content: flex-start;
+        gap: 8px;
+    }
+
+    .search-form {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .search-form input[type="text"] {
+        min-width: 100%;
+    }
+
+    .button-primary, .button-secondary {
+        width: 100%;
+        padding: 14px 0;
+    }
+
+    .table {
+        min-width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
     h1 {
         font-size: 2em;
-        margin-bottom: 25px;
     }
 
     .category-button {
         font-size: 1.1em;
-        padding: 12px 20px;
-        margin: 0 5px;
+        padding: 10px 0;
     }
 
     .tab-button {
-        font-size: 0.95em;
-        padding: 10px 15px;
-        margin: 0 3px;
-    }
-
-    .search-form {
-        flex-direction: column; /* Empilha itens em telas menores */
-        gap: 10px;
-    }
-
-    .search-form input[type="text"],
-    .search-form button {
-        width: 100%; /* Ocupa a largura total */
-        min-width: unset; /* Remove largura mínima */
-    }
-
-    .message-box,
-    .results-box {
-        padding: 15px;
-    }
-
-    .results-box h3 {
-        font-size: 1.5em;
-    }
-
-    .ficha-item {
-        padding: 15px;
-    }
-
-    .ficha-item h4 {
-        font-size: 1.2em;
-    }
-
-    .field-row {
-        flex-direction: column; /* Empilha label e valor em telas menores */
-        align-items: flex-start;
-        margin-bottom: 12px;
-    }
-
-    .field-row strong {
-        min-width: unset;
-        margin-right: 0;
-        margin-bottom: 3px; /* Espaçamento entre label e valor empilhados */
-    }
-
-    .phone-list li, .email-list li, .address-list li, .cnae-list li, .socios-list li {
-        flex-wrap: wrap; /* Permite que o conteúdo da lista quebre */
-        align-items: flex-start;
-    }
-}
-
-@media (max-width: 480px) {
-    h1 {
-        font-size: 1.8em;
-    }
-
-    .category-navigation,
-    .tab-navigation {
-        flex-direction: column;
-    }
-
-    .category-button,
-    .tab-button {
-        width: 100%;
-        margin: 5px 0;
+        font-size: 0.9em;
+        padding: 8px 12px;
     }
 }
